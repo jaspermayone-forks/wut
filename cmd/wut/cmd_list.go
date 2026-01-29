@@ -22,7 +22,6 @@ func cmdList(args []string) {
 
 	if len(entries) == 0 {
 		fmt.Println("No worktrees.")
-		maybeAutoGc(ctx)
 		return
 	}
 
@@ -66,5 +65,4 @@ func cmdList(args []string) {
 		fmt.Printf("%s %-*s  %s\n", icon, maxLen, name, tildify(e.Path))
 	}
 
-	maybeAutoGc(ctx)
 }

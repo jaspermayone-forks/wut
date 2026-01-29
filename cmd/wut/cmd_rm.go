@@ -115,5 +115,4 @@ func cmdRm(args []string) {
 		fmt.Printf("__WUT_CD__:%s\n", ctx.RepoRoot)
 	}
 
-	maybeAutoGc(ctx)
 }

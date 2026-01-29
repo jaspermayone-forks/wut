@@ -29,8 +29,6 @@ func main() {
 		cmdPath(args)
 	case "rm":
 		cmdRm(args)
-	case "gc":
-		cmdGc(args)
 	case "--completions":
 		cmdCompletions(args)
 	case "--help", "-h":

@@ -67,5 +67,4 @@ func cmdNew(args []string) {
 	}
 
 	fmt.Printf("__WUT_CD__:%s\n", worktreePath)
-	maybeAutoGc(ctx)
 }

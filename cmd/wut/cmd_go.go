@@ -59,7 +59,6 @@ func cmdGo(args []string) {
 	}
 
 	fmt.Printf("__WUT_CD__:%s\n", resolvedPath)
-	maybeAutoGc(ctx)
 }
 
 func cmdPath(args []string) {

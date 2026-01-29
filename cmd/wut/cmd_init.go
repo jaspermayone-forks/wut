@@ -35,7 +35,7 @@ _wut_completions() {
   local prev="${COMP_WORDS[COMP_CWORD-1]}"
   
   if [[ ${COMP_CWORD} -eq 1 ]]; then
-    COMPREPLY=($(compgen -W "new list go path rm gc" -- "$cur"))
+    COMPREPLY=($(compgen -W "new list go path rm" -- "$cur"))
     return
   fi
   

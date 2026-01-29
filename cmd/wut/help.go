@@ -29,7 +29,6 @@ func printUsage() {
 	fmt.Println("  wut go [branch]               🚀 Navigate to a worktree")
 	fmt.Println("  wut path <branch>             📂 Print worktree path")
 	fmt.Println("  wut rm <branch> [--force]     🗑  Remove a worktree")
-	fmt.Println("  wut gc [--dry-run]            🧹 Remove orphaned worktrees")
 
 	if !context.IsWrapperActive() {
 		fmt.Println()

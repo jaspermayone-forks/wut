@@ -83,32 +83,4 @@ wut list                      # List worktrees
 wut go [branch]               # Navigate to a worktree
 wut path <branch>             # Print worktree path
 wut rm <branch> [--force]     # Remove a worktree
-wut gc [--dry-run]            # Remove orphaned worktrees
 ```
-
-## ⚙️ Configuration
-By default, wut stores worktrees under `.worktrees` in your repo root.
-
-The configuration file lives at `~/.wut/config.json`:
-
-```json
-{
-  "autoGc": {
-    "enabled": true,
-    "intervalHours": 6
-  }
-}
-```
-
-| Setting | Type | Default | Description |
-|---------|------|---------|-------------|
-| `autoGc.enabled` | bool | `true` | Enable automatic cleanup of orphaned worktrees |
-| `autoGc.intervalHours` | int | `6` | Minimum hours between auto-cleanup runs |
-
-You can override the base directory with `WUT_HOME`, which also moves where the config file lives:
-
-```sh
-export WUT_HOME="$HOME/.wut-custom"
-```
-
-Cleanup is explicit. wut **never** deletes active worktrees on its own. The `wut gc` command only removes orphaned directories that Git no longer knows about, and you can preview what it would remove with `--dry-run`.
