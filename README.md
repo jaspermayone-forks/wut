@@ -11,7 +11,7 @@
 </div>
 
 <div align="center">
-  <h3>🪾 wut — Worktrees Unexpectedly Tolerable</h3>
+  <h3><strong>wut</strong> — Worktrees Unexpectedly Tolerable</h3>
   <p>Ephemeral worktrees that stay out of your vibe zone.</p>
 </div>
 
@@ -23,7 +23,6 @@
   <a href="#-install">📦 Install</a>&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="#-usage">🧭 Usage</a>&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="#-configuration">⚙️ Configuration</a>&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="#-development">🧪 Development</a>
 </div>
 
 <hr />
@@ -52,19 +51,6 @@ The recommended path is Homebrew via the tap for this repo.
 ```sh
 brew tap simonbs/wut
 brew install wut
-```
-
-If you want the latest commit instead of a release, Homebrew can build from HEAD:
-
-```sh
-brew install --HEAD wut
-```
-
-### From source
-If you have Go installed:
-
-```sh
-go install github.com/simonbs/wut/cmd/wut@latest
 ```
 
 ## 🧭 Usage
@@ -102,11 +88,4 @@ export WUT_HOME="$HOME/.wut-custom"
 Cleanup is explicit. wut **never** deletes active worktrees on its own. The `wut gc` command only removes orphaned directories that Git no longer knows about, and you can always preview what it would remove with `--dry-run`.
 
 If you want some lightweight housekeeping, wut can run that same cleanup after normal commands on a schedule. This is **on by default** and runs at most once every six hours.
-
-## 🧪 Development
-Local development is intentionally straightforward:
-
-```sh
-go build ./cmd/wut
-go test ./...
 ```
