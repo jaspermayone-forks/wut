@@ -9,6 +9,13 @@ class Wut < Formula
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/wut"
   end
 
+  def caveats
+    <<~EOS
+      Add shell integration to ~/.zshrc or ~/.bashrc:
+        eval "$(wut init)"
+    EOS
+  end
+
   test do
     assert_match "wut", shell_output("#{bin}/wut --help")
   end
