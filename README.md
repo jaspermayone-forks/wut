@@ -51,6 +51,21 @@ This enables automatic directory changing when you run `wut new` or `wut go`. Wi
 ## 🧭 Usage
 Run wut from inside the repo you want worktrees for. wut uses your current repo to decide where to create and manage worktrees, and it won't run from outside to avoid surprises.
 
+```sh
+$ wut new feature-login
+# Creates worktree and switches to it
+
+$ wut list
+👉 feature-login  ~/projects/myapp/.worktrees/feature-login
+🏠 main           ~/projects/myapp
+
+$ wut go main
+# Switches to main worktree
+
+$ wut rm feature-login
+# Removes worktree and deletes branch
+```
+
 Here's the full command list:
 
 ```sh
@@ -76,6 +91,11 @@ The configuration file lives at `~/.wut/config.json`:
 }
 ```
 
+| Setting | Type | Default | Description |
+|---------|------|---------|-------------|
+| `autoGc.enabled` | bool | `true` | Enable automatic cleanup of orphaned worktrees |
+| `autoGc.intervalHours` | int | `6` | Minimum hours between auto-cleanup runs |
+
 You can override the base directory with `WUT_HOME`, which also moves where the config file lives:
 
 ```sh
@@ -83,5 +103,3 @@ export WUT_HOME="$HOME/.wut-custom"
 ```
 
 Cleanup is explicit. wut **never** deletes active worktrees on its own. The `wut gc` command only removes orphaned directories that Git no longer knows about, and you can preview what it would remove with `--dry-run`.
-
-Auto-cleanup runs after normal commands on a schedule. This is **on by default** and runs at most once every six hours.
