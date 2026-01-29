@@ -21,7 +21,7 @@ func printUsage() {
   ▀▀  ▀▀    ▀▀▀▀ ▀▀     ▀▀▀▀     ▀▀     
 %s`, purple, reset)
 	fmt.Println()
-	fmt.Println("Ephemeral worktrees that stay out of your vibe zone.")
+	fmt.Println("Ephemeral worktrees without the ceremony.")
 	fmt.Println()
 	fmt.Println("Usage:")
 	fmt.Println("  wut new <branch> [--from ref] 🌱 Create a new worktree")
