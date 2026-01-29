@@ -53,7 +53,6 @@ This enables automatic directory changing when you run `wut new` or `wut go`. Wi
 ## 🧭 Usage
 Run `wut` from inside the repo you want worktrees for. `wun` will automatically create a `.worktrees/` folder in the root of the repository. `.worktrees/` folders will automatically be added to your global `.gitignore` file.
 
-```
 ```sh
 wut new <branch> [--from ref] # Create a new worktree
 wut list                      # List worktrees
