@@ -12,7 +12,7 @@
 
 <div align="center">
   <h3><strong>wut?</strong> — Worktrees Unexpectedly Tolerable</h3>
-  <p>Ephemeral worktrees that stay out of your vibe zone.</p>
+  <p>Ephemeral worktrees without the ceremony.</p>
   <img width="700" src="/screenshot.png" />
 </div>
 
