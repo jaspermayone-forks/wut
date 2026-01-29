@@ -59,7 +59,7 @@ $ wut list
 👉 feature-login  ~/projects/myapp/.worktrees/feature-login
 🏠 main           ~/projects/myapp
 
-$ wut go main
+$ wut go
 # Switches to main worktree
 
 $ wut rm feature-login
