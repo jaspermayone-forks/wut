@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/simonbs/wut/src/context"
+)
 
 func printUsage() {
 	// ANSI color codes
@@ -26,7 +30,10 @@ func printUsage() {
 	fmt.Println("  wut path <branch>             📂 Print worktree path")
 	fmt.Println("  wut rm <branch> [--force]     🗑  Remove a worktree")
 	fmt.Println("  wut gc [--dry-run]            🧹 Remove orphaned worktrees")
-	fmt.Println()
-	fmt.Println("Add shell integration to ~/.zshrc or ~/.bashrc:")
-	fmt.Println("  eval \"$(wut init)\"")
+
+	if !context.IsWrapperActive() {
+		fmt.Println()
+		fmt.Println("⚠️  Add shell integration to ~/.zshrc or ~/.bashrc:")
+		fmt.Println("  eval \"$(wut init)\"")
+	}
 }

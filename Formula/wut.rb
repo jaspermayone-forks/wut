@@ -10,16 +10,6 @@ class Wut < Formula
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/wut"
   end
 
-  def caveats
-    <<~EOS
-      🚀 To enable shell integration, add to your ~/.zshrc or ~/.bashrc:
-
-        eval "$(wut init)"
-
-      Then restart your shell or run: source ~/.zshrc
-    EOS
-  end
-
   test do
     assert_match "wut", shell_output("#{bin}/wut --help")
   end
