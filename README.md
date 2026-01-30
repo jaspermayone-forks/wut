@@ -84,3 +84,9 @@ Autocompletion is available for supported shells once you run `eval "$(wut init)
 $ wut go feat<TAB>
 # Completes to a matching worktree name
 ```
+
+`wut` works great paired with [fzf](https://github.com/junegunn/fzf) for fuzzy matching worktrees and `wut list` can be paired with `fzf` as shown below (Thanks [@carlosefonesca](https://masto.pt/@carlosefonseca/115980682267766544)!)
+
+```sh
+alias wt='cd "$(wut list | fzf --height=~20 | awk "{print \$3}" | sed "s|^~|$HOME|")"'
+```
