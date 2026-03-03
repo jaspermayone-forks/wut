@@ -42,6 +42,29 @@ func RefExists(repoRoot, ref string) bool {
 	return cmd.Run() == nil
 }
 
+func ListBranchRefs(repoRoot string) ([]string, error) {
+	output, err := Run([]string{"for-each-ref", "--format=%(refname:short)", "refs/heads", "refs/remotes"}, repoRoot)
+	if err != nil {
+		return nil, err
+	}
+
+	if strings.TrimSpace(output) == "" {
+		return nil, nil
+	}
+
+	lines := strings.Split(output, "\n")
+	refs := make([]string, 0, len(lines))
+	for _, line := range lines {
+		ref := strings.TrimSpace(line)
+		if ref == "" || strings.HasSuffix(ref, "/HEAD") {
+			continue
+		}
+		refs = append(refs, ref)
+	}
+
+	return refs, nil
+}
+
 func GetRepoRoot(cwd string) (string, error) {
 	if cwd == "" {
 		var err error

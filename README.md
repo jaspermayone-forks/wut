@@ -97,11 +97,14 @@ wut rm <branch> [--force]      # Remove a worktree
 
 #### Autocompletion
 
-Autocompletion is available for supported shells once you run `eval "$(wut init)"`, so you can tab-complete commands, branch names, and worktree names.
+Autocompletion is available for supported shells once you run `eval "$(wut init)"`, so you can tab-complete commands, branch names, worktree names, and `wut new --from` refs.
 
 ```sh
 $ wut go feat<TAB>
 # Completes to a matching worktree name
+
+$ wut new cr --from feat<TAB>
+# Completes to a matching local or remote branch ref
 ```
 
 #### fzf
